@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "de.guntram.mcmod.advancementinfo.mixin",
+    "minVersion": "0.8",
+    "compatibilityLevel": "JAVA_17",
+    "client": [
+        "AdvancementScreenMixin", "AdvancementTabMixin", "AdvancementWidgetMixin",
+        "AdvancementTabTypeMixin", "AdvancementDisplayMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

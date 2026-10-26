@@ -1,0 +1,28 @@
+package de.guntram.mcmod.advancementinfo.mixin;
+
+import de.guntram.mcmod.advancementinfo.AdvancementInfo;
+import net.minecraft.advancements.DisplayInfo;
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+/**
+ * NeoForge 1.21.1 port of the original Fabric AdvancementDisplayMixin.
+ * Original: https://github.com/wafarm/AdvancementInfo (author: Giselbaer / gbl)
+ */
+@Mixin(DisplayInfo.class)
+public class AdvancementDisplayMixin {
+
+    @Shadow
+    @Final
+    private boolean hidden;
+
+    @Inject(method = "isHidden", at = @At("HEAD"), cancellable = true)
+    public void isHiddenOverride(CallbackInfoReturnable<Boolean> cir) {
+        cir.cancel();
+        cir.setReturnValue(hidden && !AdvancementInfo.showAll);
+    }
+}

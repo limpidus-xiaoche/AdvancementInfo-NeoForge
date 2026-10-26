@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[2,)"
+license="MIT"
+issueTrackerURL="https://github.com/wafarm/AdvancementInfo/issues"
+
+[[mods]]
+modId="advancementinfo"
+version="1.4.1"
+displayName="AdvancementInfo (NeoForge Port)"
+displayURL="https://github.com/wafarm/AdvancementInfo"
+logoFile="icon.png"
+logoBlur=false
+authors="Giselbaer (gbl); NeoForge port by limpidus-xiaoche"
+description="Make it easier to see which advancements you have and what's missing. NeoForge 1.21.1 port of the Fabric mod AdvancementInfo by Giselbaer (https://github.com/wafarm/AdvancementInfo)."
+
+[[mixins]]
+config = "mixins.advancementinfo.json"
+
+[[dependencies.advancementinfo]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.advancementinfo]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1,)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,6 @@
+build/
+.idea/
+*.iml
+.gradle/
+run/
+out/
